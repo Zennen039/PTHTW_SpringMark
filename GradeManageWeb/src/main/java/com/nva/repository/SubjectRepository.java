@@ -13,7 +13,7 @@ import java.util.Map;
  * @author nguye
  */
 public interface SubjectRepository {
-
+    
     List<Subject> getSubjects(Map<String, String> params);
 
     void addOrUpdate(Subject sj);

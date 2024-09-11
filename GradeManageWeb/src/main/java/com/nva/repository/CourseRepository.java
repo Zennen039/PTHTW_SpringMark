@@ -4,10 +4,14 @@
  */
 package com.nva.repository;
 
+import com.nva.pojo.Course;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface CourseRepository {
     
+    List<Course> getCourse();
 }

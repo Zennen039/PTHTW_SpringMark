@@ -86,7 +86,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "studentId")
     @JsonIgnore
     private Set<Enrollment> enrollmentSet;
-    
+
     @Transient
     private MultipartFile file;
 
@@ -266,5 +266,5 @@ public class User implements Serializable {
     public void setFile(MultipartFile file) {
         this.file = file;
     }
-    
+
 }

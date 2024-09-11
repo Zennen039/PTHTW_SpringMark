@@ -27,7 +27,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public class SubjectRepositoryImpl implements SubjectRepository {
-
+    
     @Autowired
     private LocalSessionFactoryBean factory;
 
@@ -49,7 +49,7 @@ public class SubjectRepositoryImpl implements SubjectRepository {
 
         if (kw != null && !kw.isEmpty()) {
             predicates.add(b.like(r.get("name"), String.format("%%%s%%", kw)));
-        }
+}
 
         String subjectId = params.get("subjectId");
 

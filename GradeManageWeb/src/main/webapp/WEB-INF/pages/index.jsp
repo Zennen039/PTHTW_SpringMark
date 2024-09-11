@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : Sep 1, 2024, 10:49:09 PM
+    Created on : Sep 3, 2024, 5:34:41 PM
     Author     : nguye
 --%>
 
@@ -29,19 +29,29 @@
                     <td class="text-center">${sj.id}</td>
                     <td class="text-center">${sj.name}</td>
                     <td class="text-center">${sj.description}</td>
-                    <td></td>
+                    <td class="text-center">${sj.lecturerName}</td>
                     <td></td>
                     <td>
+                        <a href="<c:url value="/subjectdetails" />" class="btn btn-info btn-outline-light rounded-pill">
+                            See details
+                        </a>
+
                         <c:url value="/subjects/${sj.id}" var="e" />
-                        <a href="${e}" class="btn btn-success">&orarr;</a>
+                        <a href="${e}" class="btn btn-success btn-outline-light rounded-pill">
+                            &orarr;
+                        </a>
 
                         <c:url value="/api/subjects/${sj.id}" var="eD" />
-                        <button onclick="deleteSubject('${eD}', ${sj.id})" class="btn btn-danger">&times;</button>
+                        <button onclick="deleteSubject('${eD}', ${sj.id})" class="btn btn-danger btn-outline-light rounded-pill">
+                            &times;
+                        </button>
                     </td>
                 </tr>
             </tbody>
         </c:forEach>
     </table>
 
-    <a class="btn btn-info m-1" href="<c:url value="/subjects" />">Add subject</a>
+    <a class="btn btn-info m-1 btn-outline-light rounded-pill" href="<c:url value="/subjects" />">Add subject</a>
+
+    <a class="btn btn-info m-1 btn-outline-light rounded-pill" href="<c:url value="/users" />">Add lecturer</a>
 </section>

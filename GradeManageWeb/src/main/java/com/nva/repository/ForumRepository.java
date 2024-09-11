@@ -4,10 +4,14 @@
  */
 package com.nva.repository;
 
+import com.nva.pojo.Forum;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface ForumRepository {
     
+    List<Forum> getForums();
 }

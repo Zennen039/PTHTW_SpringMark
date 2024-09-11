@@ -4,10 +4,14 @@
  */
 package com.nva.service;
 
+import com.nva.pojo.Enrollment;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface EnrollmentService {
-    
+
+    List<Enrollment> getEnrollmets();
 }

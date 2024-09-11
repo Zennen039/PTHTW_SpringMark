@@ -18,14 +18,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SubjectServiceImpl implements SubjectService {
-
+    
     @Autowired
     private SubjectRepository subRepo;
 
     @Override
     public List<Subject> getSubjects(Map<String, String> params) {
         return this.subRepo.getSubjects(params);
-    }
+}
 
     @Override
     public void addOrUpdate(Subject sj) {

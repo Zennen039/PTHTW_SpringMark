@@ -158,5 +158,5 @@ public class Subject implements Serializable {
     public String toString() {
         return "com.nva.pojo.Subject[ id=" + id + " ]";
     }
-    
+
 }

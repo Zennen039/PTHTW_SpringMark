@@ -4,10 +4,16 @@
  */
 package com.nva.repository;
 
+import com.nva.pojo.Score;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface ScoreRepository {
+
+    List<Score> getScores();
     
+    List<Score> getScoreByVolumeId(int score_vol_Id);
 }

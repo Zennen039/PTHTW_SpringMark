@@ -4,10 +4,25 @@
  */
 package com.nva.service.impl;
 
+import com.nva.pojo.Forum;
+import com.nva.repository.ForumRepository;
+import com.nva.service.ForumService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author nguye
  */
-public class ForumServiceImpl {
-    
+@Service
+public class ForumServiceImpl implements ForumService {
+
+    @Autowired
+    private ForumRepository forumRepo;
+
+    @Override
+    public List<Forum> getForums() {
+        return this.forumRepo.getForums();
+    }
 }

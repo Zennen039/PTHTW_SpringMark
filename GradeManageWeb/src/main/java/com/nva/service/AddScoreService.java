@@ -4,10 +4,14 @@
  */
 package com.nva.service;
 
+import com.nva.pojo.AddScore;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface AddScoreService {
     
+    List<AddScore> getAddScore();
 }

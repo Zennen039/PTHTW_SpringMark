@@ -4,10 +4,16 @@
  */
 package com.nva.service;
 
+import com.nva.pojo.Volume;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface VolumeService {
-    
+
+    List<Volume> getVolumes();
+
+    Volume getVolumeById(int id);
 }

@@ -9,14 +9,29 @@
         <put-attribute name="content" value="" />
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
     </definition>
-    
+
     <definition name="home" extends="baseLayout">
         <put-attribute name="title" value="Grade Management Web" />
         <put-attribute name="content" value="/WEB-INF/pages/index.jsp" />
     </definition>
-    
+
     <definition name="subjects" extends="baseLayout">
         <put-attribute name="title" value="Subject Management" />
         <put-attribute name="content" value="/WEB-INF/pages/subjects.jsp" />
+    </definition>
+    
+    <definition name="users" extends="baseLayout">
+        <put-attribute name="title" value="User Management" />
+        <put-attribute name="content" value="/WEB-INF/pages/users.jsp" />
+    </definition>
+    
+    <definition name="subjectdetails" extends="baseLayout">
+        <put-attribute name="title" value="Subject Details" />
+        <put-attribute name="content" value="/WEB-INF/pages/subjectdetails.jsp" />
+    </definition>
+    
+    <definition name="userdetails" extends="baseLayout">
+        <put-attribute name="title" value="User Details" />
+        <put-attribute name="content" value="/WEB-INF/pages/userdetails.jsp" />
     </definition>
 </tiles-definitions>

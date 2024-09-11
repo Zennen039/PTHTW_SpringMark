@@ -4,14 +4,14 @@
  */
 package com.nva.configs;
 
-import com.cloudinary.Cloudinary;
-import com.cloudinary.utils.ObjectUtils;
 import com.nva.formatters.CategoryFormatter;
+import com.nva.formatters.UserFormatter;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.annotation.Order;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.Validator;
@@ -32,8 +32,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan(basePackages = {
     "com.nva.controllers",
     "com.nva.repository",
-    "com.nva.service"
+    "com.nva.service",
+    "com.nva.components"
 })
+@Order(1)
 public class WebAppContextConfigs implements WebMvcConfigurer {
 
     @Override
@@ -48,17 +50,6 @@ public class WebAppContextConfigs implements WebMvcConfigurer {
         resolver.setDefaultEncoding("UTF-8");
 
         return resolver;
-    }
-
-    @Bean
-    public Cloudinary cloudinary() {
-        Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap(
-                "cloud_name", "dvn6qzq9o",
-                "api_key", "438998175576659",
-                "api_secret", "2PhCeDJfEWebcAPrYZSHM3fHweI",
-                "secure", true));
-
-        return cloudinary;
     }
 
     @Bean
@@ -93,10 +84,11 @@ public class WebAppContextConfigs implements WebMvcConfigurer {
 //        
 //        return r;
 //    }
-    
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(new CategoryFormatter());
+        
+        registry.addFormatter(new UserFormatter());
     }
 
     @Override

@@ -12,6 +12,6 @@ import java.util.List;
  * @author nguye
  */
 public interface CategoryService {
-
+    
     List<Category> getCates();
 }

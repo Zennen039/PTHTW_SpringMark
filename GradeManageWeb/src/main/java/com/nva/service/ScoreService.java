@@ -4,10 +4,16 @@
  */
 package com.nva.service;
 
+import com.nva.pojo.Score;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface ScoreService {
+
+    List<Score> getScores();
     
+    List<Score> getScoreByVolumeId(int score_vol_Id);
 }

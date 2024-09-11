@@ -4,10 +4,14 @@
  */
 package com.nva.repository;
 
+import com.nva.pojo.Comment;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface CommentRepository {
     
+    List<Comment> getComments();
 }

@@ -4,10 +4,25 @@
  */
 package com.nva.service.impl;
 
+import com.nva.pojo.Comment;
+import com.nva.repository.CommentRepository;
+import com.nva.service.CommentService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author nguye
  */
-public class CommentServiceImpl {
+@Service
+public class CommentServiceImpl implements CommentService {
     
+    @Autowired
+    private CommentRepository comRepo;
+
+    @Override
+    public List<Comment> getComments() {
+        return this.comRepo.getComments();
+    }
 }

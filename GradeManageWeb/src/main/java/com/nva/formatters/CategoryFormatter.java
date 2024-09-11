@@ -14,11 +14,11 @@ import org.springframework.format.Formatter;
  * @author nguye
  */
 public class CategoryFormatter implements Formatter<Category> {
-
+    
     @Override
     public String print(Category cate, Locale locale) {
         return String.valueOf(cate.getId());
-    }
+}
 
     @Override
     public Category parse(String cateId, Locale locale) throws ParseException {

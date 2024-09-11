@@ -1,6 +1,6 @@
 <%-- 
     Document   : subjects
-    Created on : Sep 1, 2024, 10:49:17 PM
+    Created on : Sep 3, 2024, 5:35:31 PM
     Author     : nguye
 --%>
 
@@ -32,6 +32,22 @@
     </div>
 
     <div class="mb-3">
+        <label for="browser" class="form-label">Lecturer: </label>
+        <form:select class="form-select" path="lecturerId" >
+            <c:forEach items="${subjects}" var="s">
+                <c:choose>
+                    <c:when test="${s.id == subject.lecturerId.id}">
+                        <option value="${s.id}" selected>${s.lecturerName}</option>
+                    </c:when>
+                    <c:otherwise>
+                        <option value="${s.id}">${s.lecturerName}</option>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </form:select>
+    </div>
+
+    <div class="mb-3">
         <label for="browser" class="form-label">Category: </label>
         <form:select class="form-select" path="cateId" >
             <c:forEach items="${categories}" var="c">
@@ -43,7 +59,6 @@
                         <option value="${c.id}">${c.name}</option>
                     </c:otherwise>
                 </c:choose>
-
             </c:forEach>
         </form:select>
     </div>

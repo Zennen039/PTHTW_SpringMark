@@ -4,10 +4,14 @@
  */
 package com.nva.repository;
 
+import com.nva.pojo.AddScore;
+import java.util.List;
+
 /**
  *
  * @author nguye
  */
 public interface AddScoreRepository {
-    
+
+    List<AddScore> getAddScore();
 }

@@ -4,10 +4,30 @@
  */
 package com.nva.service.impl;
 
+import com.nva.pojo.Score;
+import com.nva.repository.ScoreRepository;
+import com.nva.service.ScoreService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author nguye
  */
-public class ScoreServiceImpl {
-    
+@Service
+public class ScoreServiceImpl implements ScoreService {
+
+    @Autowired
+    private ScoreRepository scoreRepo;
+
+    @Override
+    public List<Score> getScores() {
+        return this.scoreRepo.getScores();
+    }
+
+    @Override
+    public List<Score> getScoreByVolumeId(int score_vol_Id) {
+        return this.scoreRepo.getScoreByVolumeId(score_vol_Id);
+    }
 }
